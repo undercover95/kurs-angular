@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped mb-0">
+        <tbody>
+          <tr>
+            <td>
+              User
+            </td>
+            <td>
+              {{ username | uppercase }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Data
+            </td>
+            <td>
+              {{ date | date: format }}<br>
+              <button class="btn btn-dark btn-sm" (click)="toggleDateFormat()">Toggle Format</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Liczba&nbsp;PI
+            </td>
+            <td>
+              {{ piValue | number: '1.1-2' }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
