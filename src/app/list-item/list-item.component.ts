@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import User from '../User';
 
 @Component({
   selector: 'app-list-item',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-item.component.less']
 })
 export class ListItemComponent implements OnInit {
+  @Input() user: User;
+  @Input() idx: number;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

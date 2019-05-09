@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import User from '../User';
 
 @Component({
   selector: 'app-list',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.less']
 })
 export class ListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  users = new Array<User>();
+  constructor() {
+    this.users.push(new User('Kuba', 25));
+    this.users.push(new User('Paulina', 31));
+    this.users.push(new User('Konrad', 17));
   }
 
+  ngOnInit() {}
 }

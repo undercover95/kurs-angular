@@ -1,0 +1,28 @@
+<h3>Data binding</h3>
+<div>
+  <input class="form-control mb-3" [placeholder]="inputText" />
+</div>
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <input class="form-control" [(ngModel)]="inputText2Way" />
+      </div>
+      <div class="col-6">
+        {{ inputText2Way }}
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <input
+    class="form-control mt-4"
+    (mousedown)="focus($event)"
+    (mouseup)="focus($event)"
+    [(ngModel)]="inputText2Way"
+  />
+  <button class="btn btn-primary btn-sm" [disabled]="isDisabled">
+    Click me!
+  </button>
+  <p>{{ msg }}</p>
+</div>

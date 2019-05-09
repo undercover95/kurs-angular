@@ -1,10 +1,22 @@
 <div class="card">
-    <div class="card-body">
-      <h4 class="card-title">
-        List of items
-      </h4>
+  <div class="card-body">
+    <h4 class="card-title">List of users (all: {{ users.length }})</h4>
+    <div *ngIf="users.length > 0; then areUsers; else noUsers"></div>
+    <ng-template #areUsers>
       <ul>
-        <app-list-item></app-list-item>
+        <ng-container *ngFor="let user of users; let i = index">
+          <app-list-item
+            [user]="user"
+            [idx]="i"
+            *ngIf="user.age > 18"
+          ></app-list-item>
+        </ng-container>
       </ul>
-    </div>
+    </ng-template>
+    <ng-template #noUsers>
+      <div class="alert alert-danger">
+        Brak userów!
+      </div>
+    </ng-template>
   </div>
+</div>

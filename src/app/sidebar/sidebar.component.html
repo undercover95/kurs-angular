@@ -8,7 +8,7 @@
               User
             </td>
             <td>
-              {{ username | uppercase }}
+              {{ user?.username | uppercase }}
             </td>
           </tr>
           <tr>
@@ -16,8 +16,10 @@
               Data
             </td>
             <td>
-              {{ date | date: format }}<br>
-              <button class="btn btn-dark btn-sm" (click)="toggleDateFormat()">Toggle Format</button>
+              {{ date | date: format | uppercase }}<br />
+              <button class="btn btn-dark btn-sm" (click)="toggleDateFormat()">
+                Toggle Format
+              </button>
             </td>
           </tr>
           <tr>
@@ -25,7 +27,7 @@
               Liczba&nbsp;PI
             </td>
             <td>
-              {{ piValue | number: '1.1-2' }}
+              {{ piValue | number: "1.1-2" }}
             </td>
           </tr>
         </tbody>

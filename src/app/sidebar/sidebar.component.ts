@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import User from '../User';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,14 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.less']
 })
 export class SidebarComponent implements OnInit {
-
-  username: string;
+  user: User;
   date: Date;
   piValue: number;
   toggle: boolean;
 
   constructor() {
-    this.username = "Michał";
+    this.user = new User('Michał', 24);
     this.date = new Date();
     this.piValue = Math.PI;
     this.toggle = true;
@@ -27,7 +27,5 @@ export class SidebarComponent implements OnInit {
     this.toggle = !this.toggle;
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
